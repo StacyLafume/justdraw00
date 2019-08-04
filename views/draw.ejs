@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+      <title>Just Draw</title>
+      <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="style.css">
+
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Monoton|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+      <!-- P5 js  library link-->
+      <script src="p5.js"></script>
+      <script src="p5.dom.js"></script>
+      <script src="p5.sound.js"></script>
+      <script src="sketch.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+  </head>
+  <body>
+
+    <h1>Time: <span id="display"></span></h1>
+
+    <input id="count" type="text" placeholder="Enter time in minutes" name="" value="">
+
+    <button class="signInButton" id="begin" type="button" name="button">Start Timer</button>
+
+
+
+    <main id="size">
+
+        <canvas id="canvas" placeholder="Draw here..."></canvas>
+
+    </main>
+
+
+    <a href="/draw" > <button type="button" class="signInButton" name="button">Reset</button></a>
+    <form id="form" class="" action="/pic" method="post">
+
+      <input id="place" hidden type="text" name="url" value="">
+
+      <input hidden type="text" name="user" value="<%= user.local.email %>">
+
+      <button class="signInButton" id="save" type="button" name="button">Save</button>
+
+    </form>
+
+    <script src="draw.js"></script>
+
+    <script src="timer.js"></script>
+
+    <script src="main.js"></script>
+
+  </body>
+
+</html>

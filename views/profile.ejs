@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <title>Just Draw</title>
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Monoton|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1>Profile Page</h1>
+
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3>Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+                    <a href="/logout" class="signInButton btn btn-default btn-sm">Logout</a>
+                    <a href="/unlink/local" class="signInButton btn btn-default">Unlink</a>
+                    <a href="/draw" class="signInButton btn btn-default btn-sm">Draw!</a>
+                <% } else { %>
+                    <a href="/connect/local" class=" btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+
+          <h1 class="smaller">Drawings</h1>
+
+
+          <section class="grid-container">
+
+
+
+          <% for(var i=0; i<drawings.length; i++) {%>
+
+              <figure class="grid-item">
+
+                <img src="<%= drawings[i].png %>" alt="">
+
+                  <input type="text" name="" value="">
+                  <button type="button" name="button">set</button>
+
+
+                <figcaption></figcaption>
+
+                <!-- <div class="showhim">
+                  <div class="showme"> -->
+                     <i class="fas fa-trash-alt" data-drawings="<%= drawings[i].png %>"></i>
+                  <!-- </div>
+                </div> -->
+
+              </figure>
+
+          <% } %>
+
+        </section>
+
+
+          <!-- <h2>Add a message</h2> -->
+        <% if (user.local.email) { %>
+          <!-- <form action="/messages" method="POST">
+            <input type="text" value="<%= user.local.email %>" name="name">
+            <input type="text" placeholder="message" name="msg">
+            <button type="submit">Submit</button>
+          </form> -->
+        </div>
+        <% } %>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
