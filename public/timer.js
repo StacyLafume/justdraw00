@@ -14,6 +14,7 @@ let start = document.getElementById("begin")
 start.addEventListener("click", function(){
 
   //  the repeated action you want to cancel
+  //stops timer
   clearInterval(countdown);
 
   // sets the canvas to be  clickable
@@ -22,18 +23,12 @@ start.addEventListener("click", function(){
 // count hold the value of the number
   let count = document.getElementById("count").value
 
-  console.log("count: ", count);
+  // default timer if user does not input any value to start the timer.
+    if(count <= 0){
+      count = 3
+    }
 
-  // let params = getURLParams();
-  //
-  //
-  // if(params.minute){
-  //   let min = params.minute
-  //   count = min * 60
-  // }
-  // count = params.minute = count
-
-  // console.log("object timer: ", params, params.minute);
+  console.log("time: ", count);
 
   // to get the seconds
   let seconds = count  * 60
@@ -41,19 +36,12 @@ start.addEventListener("click", function(){
 //displays the niumber inside of the h1
     vision.innerHTML = convert(seconds)
 
-//for evr sec the timer func is fired
+//for every sec the timer func is fired
   countdown = setInterval(timer, 1000);
 
 
   // count the nume down by one
   function timer(){
-
-    // the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC.
-    //  const now = Date.now();
-    //
-    // const then = now + seconds * 1000;
-
-    // console.log("current date: ", now, "then: ", then);
 
     decrease ++
 
@@ -61,7 +49,7 @@ start.addEventListener("click", function(){
 
     vision.innerHTML = convert(timeLeft)
 
-      console.log("current timer: ", seconds, decrease);
+      // console.log("current timer: ", seconds, decrease);
   //if count = 0 we set the input to the uri of the canvas
       if(timeLeft == 0){
 
@@ -89,17 +77,29 @@ start.addEventListener("click", function(){
 
 })
 
-
+/////////////THIS IS THE POST///////////////////////
   let save = document.getElementById("save")
 
 //save get the id of the button in the from
   save.addEventListener("click", function(){
 
+      //Place is the input
     let val = document.getElementById("place")
 
+      // this th title that the user inputs
+    let title = document.getElementById("title").value
+
+      // this is the form used to ssend info to database
+    let settingTitle = document.getElementById("setTitle")
+
+    //gets pic url from canavas
     let uri = canvas.toDataURL()
 
+    //make sure it has the url
     val.value = uri
+
+    //make the input in the form = the title that the users
+    settingTitle.value = title
 
     console.log("uri saved: ", val.value);
 

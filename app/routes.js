@@ -1,4 +1,4 @@
-module.exports = function(app, passport, db) {
+module.exports = function(app, passport, db, ObjectId ) {
 
 // normal routes ===============================================================
 
@@ -6,8 +6,6 @@ module.exports = function(app, passport, db) {
     app.get('/', function(req, res) {
         res.render('index.ejs');
     });
-//====================DRAW SECTION============================
-
 
 
     // PROFILE SECTION =========================
@@ -26,10 +24,34 @@ module.exports = function(app, passport, db) {
           if (err) return console.log(err)
           res.render('draw.ejs', {
             user : req.user,
-            messages: result
+            drawings: result
           })
         })
     });
+
+    app.get('/editdraw', isLoggedIn, function(req, res) {
+        db.collection('drawings').find().toArray((err, result) => {
+          if (err) return console.log(err)
+          console.log(result);
+          res.render('editdraw.ejs', {
+            user : req.user,
+            drawings: result
+          })
+        })
+    });
+
+    app.get('/newsfeed', isLoggedIn, function(req, res) {
+        db.collection('drawings').find().toArray((err, result) => {
+          if (err) return console.log(err)
+          res.render('newsfeed.ejs', {
+            user : req.user,
+            drawings: result
+          })
+        })
+    });
+
+
+
 
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {
@@ -38,43 +60,70 @@ module.exports = function(app, passport, db) {
     });
 
 // message board routes ===============================================================
+    //
+    // app.post('/messages', (req, res) => {
+    //   db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
+    //     if (err) return console.log(err)
+    //     console.log('saved to database')
+    //     res.redirect('/profile')
+    //   })
+    // })
 
-    app.post('/messages', (req, res) => {
-      db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
+    app.post('/pic', isLoggedIn,(req, res) => {
+      db.collection('drawings').save({user: req.user.local.email , png: req.body.url, userName: req.user.userName, title: req.body.title}, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
         res.redirect('/profile')
       })
     })
 
-    app.post('/pic', (req, res) => {
-      db.collection('drawings').save({user: req.body.user, png: req.body.url}, (err, result) => {
-        if (err) return console.log(err)
-        console.log('saved to database')
-        res.redirect('/profile')
-      })
-    })
 
-    app.put('/messages', (req, res) => {
-      db.collection('messages')
-      .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
-        $set: {
-          thumbUp:req.body.thumbUp + 1
-        }
-      }, {
-        sort: {_id: -1},
-        upsert: true
-      }, (err, result) => {
-        if (err) return res.send(err)
-        res.send(result)
-      })
-    })
+    // app.get('/pic/:pic_id', (req, res) => {
+    // var pic_id = ObjectId(req.param.pic_id);
+    // console.log('this is pic id', pic_id);
 
-    app.put('/decrease', (req, res) => {
-      db.collection('messages')
-      .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
+    // const {objectId} = require('mongodb');
+    //
+    // app.get('/pic', (req, res) => {
+    //   console.log("PICID: ", req.query.pic_id);
+    //   var pic_id = objectId(req.query.pic_id);
+    //   db.collection('drawings').find({"_id": pic_id}).toArray((err, result) => {
+    //     if (err) return console.log(err)
+    //     console.log("pics: ", result);
+    //     res.render('draw.ejs',{
+    //       user : req.user,
+    //       drawings: result
+    //     })//findOne(with pic_id) then render('draw.ejs', drawings)
+    //   })
+    // });
+
+
+    ObjectID = require('mongodb').ObjectID;
+        app.get('/pic', (req, res) => {
+          console.log("PICID: ", req.query.pic_id);
+          var pic_id = ObjectID(req.query.pic_id);
+          db.collection('drawings').find({"_id": pic_id}).toArray((err, result) => {
+            if (err) return console.log(err)
+            console.log("pics: ", result);
+            res.render('draw.ejs',{
+              user : req.user,
+              drawings: result
+            })//findOne(with pic_id) then render('draw.ejs', drawings)
+          })
+        });
+
+
+  //====================EDIT DRAW SECTION============================
+
+  app.put('/editdraw', (req, res) => {
+    console.log("uri: ", req.body.url, "id: ", req.body.id, "title: ", req.body.title);
+    var pic_id = ObjectID(req.body.id)
+      db.collection('drawings')
+      .findOneAndUpdate({_id: pic_id}, {
         $set: {
-          thumbUp:req.body.thumbDown - 1 //?
+          png: req.body.url,
+
+          title: req.body.title
         }
       }, {
         sort: {_id: -1},

@@ -32,9 +32,10 @@
 
     <button id="begin" type="button" name="button">Start Timer</button>
 
+    <!-- rendering the ttile inside the h1 title -->
     <label for="title"> <h1>Title</h1> </label>
 
-    <input id="title" type="text" name="" value="">
+    <input id="editTitle" type="text" name="" value="">
 
     <label class="color" for="">Color:</label>
 
@@ -44,8 +45,9 @@
 
     <input id="myRange" type="range" name="" value="" min="1" max="100">
 
-    <button id="save" type="button" name="button">Save</button>
-    <a href="/draw"> <button type="button" name="button">Reset</button></a>
+    <button id="update" type="button" name="button">Save</button>
+
+    <button id="reset" type="button" name="button">Reset</button>
     <!-- <button id="eraser" type="button" name="button">eraser</button> -->
 
     <label  class="switch">
@@ -66,24 +68,15 @@
 
 
 
-
-    <form id="form" class="" action="/pic" method="post">
-
-      <input id="place" hidden type="text" name="url" value="">
-
-      <input hidden type="text" name="user" value="<%= user.local.email %>">
-
-      <input id="setTitle" hidden type="text" name="title" value="">
-
-    </form>
-
   </main>
+
+  <script src="main.js"></script>
 
   <script src="draw.js"></script>
 
   <script src="timer.js"></script>
 
-  <script src="main.js"></script>
+  <script src="edit.js"></script>
 
 </body>
 
