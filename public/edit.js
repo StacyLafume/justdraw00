@@ -54,7 +54,7 @@
         img.crossOrigin = "Anonymous";
 
         img.addEventListener("load", function () {
-          
+
             // The image can be drawn from any source
             context.drawImage(img, 0, 0, img.width, img.height, 0, 0, space.width, space.height);
         });
