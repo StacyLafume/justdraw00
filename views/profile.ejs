@@ -1,129 +1,144 @@
 <!doctype html>
 <html>
 
-<head>
-  <title>Just Draw</title>
-  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style.css">
+  <head>
+    <title>Just Draw</title>
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="nav.css"> -->
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Monoton|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Monoton|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 
-</head>
+  </head>
 
-<body>
-  <div class="container">
+  <body>
 
-    <div class="page-header text-center">
-      <!-- <h1>Profile Page</h1> -->
+    <!-- //////////////////  NAV BAR  //////////////////// -->
+
+    <!-- <div id = "navbar">Just Draw</div>
+
+  <div class="navbutton"></div>
+
+  <div id = "navitems">
+    <a href="#">profile</a>
+    <a href="#">Draw!</a>
+    <a href="#">news feed</a>
+    <a href="#">logout</a>
+    <a href="#">unlink</a> -->
 
     </div>
+    <!-- //////////////////////////////////////// -->
 
-    <div class="row">
+    <div class="container">
 
-      <!-- LOCAL INFORMATION -->
-      <div class="col-sm-6">
-        <div class="well">
+      <div class="page-header text-center">
+        <!-- <h1>Profile Page</h1> -->
 
-
-          <% if (user.local.email) { %>
-          <h3>
-            User Name:<br> <span class="userName">@<%= user.userName %><br> </span>
-            <!-- <strong>id</strong>: <%= user._id %><br>
-                                <strong>email</strong>: <%= user.local.email %><br>
-                                <strong>password</strong>: <%= user.local.password %> -->
-          </h3>
-
-          <section class="linkHolder">
-            <a href="/draw" class="signInButton btn btn-default btn-sm">Draw!</a>
-          </section>
-
-          <section class="linkHolder">
-            <a href="/newsfeed" class="signInButton btn btn-default btn-sm">News Feed
-            </a>
-          </section>
-
-          <% } else { %>
-          <a href="/connect/local" class=" btn btn-default">Connect Local</a>
-          <% } %>
-
-        </div>
       </div>
-      <div class="col-sm-6">
 
-        <h1 class="smaller">Drawings</h1>
+      <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+          <div class="well">
 
 
-        <section class="grid-container">
+            <% if (user.local.email) { %>
+            <h3>
+              User Name:<br> <span class="userName">@<%= user.userName %></span>
+              <!-- <strong>id</strong>: <%= user._id %><br>
+                                  <strong>email</strong>: <%= user.local.email %><br>
+                                  <strong>password</strong>: <%= user.local.password %> -->
+            </h3>
+
+            <section class="linkHolder">
+              <a href="/draw" class="signInButton btn btn-default btn-sm">Draw!</a>
+            </section>
+
+            <section class="linkHolder">
+              <a href="/newsfeed" class="signInButton btn btn-default btn-sm">News Feed
+              </a>
+            </section>
+
+            <% } else { %>
+            <a href="/connect/local" class=" btn btn-default">Connect Local</a>
+            <% } %>
+
+          </div>
+        </div>
+        <div class="col-sm-6">
+
+          <section class="grid-container">
 
 
 
-          <% for(var i=0; i<drawings.length; i++) {%>
+            <% for(var i=0; i<drawings.length; i++) {%>
 
-          <% if (drawings[i].user === user.local.email) {%>
+            <% if (drawings[i].user === user.local.email) {%>
 
-          <figure class="grid-item">
+            <figure class="grid-item">
 
-            <img src="<%= drawings[i].png %>" alt="">
+              <img src="<%= drawings[i].png %>" alt="">
 
-            <!-- <input type="text" name="" value="">
-                          <button type="button" name="button">set</button> -->
+              <!-- <input type="text" name="" value="">
+                            <button type="button" name="button">set</button> -->
 
-          <!-- rendering the title -->
-            <figcaption><%= drawings[i].title %></figcaption>
+              <!-- rendering the title -->
+              <figcaption><%= drawings[i].title %></figcaption>
 
-            <i class="fas fa-trash-alt" data-drawings="<%= drawings[i].png %>"></i>
+              <i class="fas fa-trash-alt" data-drawings="<%= drawings[i].png %>"></i>
 
-            <!-- <a href="/editdraw?pic_id=<%= drawings[i]._id %>"> -->
+              <!-- <a href="/editdraw?pic_id=<%= drawings[i]._id %>"> -->
 
               <i class="far fa-edit" data-drawings="<%= drawings[i].png %>" data-id="<%= drawings[i]._id %>" data-title="<%= drawings[i].title %>"></i>
               <!-- <button ata-drawings="<%= drawings[i].png%>" type="button" name="button"></button> -->
 
-            <!-- </a> -->
+              <!-- </a> -->
 
 
-          </figure>
+            </figure>
 
-          <% } %>
+            <% } %>
 
-          <% } %>
+            <% } %>
 
-        </section>
+          </section>
 
 
-        <!-- <h2>Add a message</h2> -->
-        <% if (user.local.email) { %>
-        <!-- <form action="/messages" method="POST">
-                    <input type="text" value="<%= user.local.email %>" name="name">
-                    <input type="text" placeholder="message" name="msg">
-                    <button type="submit">Submit</button>
-                  </form> -->
+          <!-- <h2>Add a message</h2> -->
+          <% if (user.local.email) { %>
+          <!-- <form action="/messages" method="POST">
+                      <input type="text" value="<%= user.local.email %>" name="name">
+                      <input type="text" placeholder="message" name="msg">
+                      <button type="submit">Submit</button>
+                    </form> -->
+        </div>
+        <% } %>
+
+        <a href="/logout" class="signInButton btn btn-default btn-sm">Logout</a>
+
+        <a href="/unlink/local" class="signInButton btn btn-default">Unlink</a>
+
+
+
+
+
+
+
       </div>
-      <% } %>
-
-      <a href="/logout" class="signInButton btn btn-default btn-sm">Logout</a>
-
-      <a href="/unlink/local" class="signInButton btn btn-default">Unlink</a>
-
-
-
-
-
-
-
     </div>
-  </div>
 
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 
-  <!-- <script src="edit.js"></script> -->
+    <!-- <script src="edit.js"></script> -->
 
 
-</body>
+  </body>
 
 </html>

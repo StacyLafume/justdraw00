@@ -3,14 +3,14 @@ body {
   background-color: #79c99e;
   padding: 4%;
   padding-top: 0%;
-  background-image: linear-gradient(to bottom right, steelblue, cadetblue, lightgreen);
+  /* background-image: linear-gradient(to bottom right, steelblue, cadetblue, lightgreen); */
   background-repeat:no-repeat;
   font-family: 'IBM Plex Sans';
   font-weight: 200;
-  height: 600px;
+  height: 00px;
   /* background-image: url("img/default.png");
   background-position: center;
-  background-size: cover; */
+  background-size: auto; */
 }
 
 
@@ -132,8 +132,8 @@ h1>span {
   border-radius: 6px;
   margin-left: 18%
 }
-/*
-.background{
+
+/* .background{
 width: 100%;
 height: 500px;
   background-image: url("img/default.png");

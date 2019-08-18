@@ -29,7 +29,7 @@ var edit = document.getElementsByClassName("fa-edit");
 Array.from(edit).forEach(function(element) {
 
       element.addEventListener('click', function(){
-        
+
           //png
         const editImg = element.getAttribute("data-drawings");
 
@@ -53,3 +53,30 @@ Array.from(edit).forEach(function(element) {
 
       })
     })
+
+
+    $(document).ready(function () {
+	$('.nav-back-arrow').on('click', function () {
+		$(this).toggleClass('active')
+	})
+
+	$('.nav-front-arrow').on('click', function () {
+		$(this).toggleClass('active')
+	})
+
+	$('.nav-clear-overlap').on('click', function () {
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active').addClass('none')
+		} else {
+			$(this).removeClass('none').addClass('active')
+		}
+	})
+
+	$('.nav-clear-trans').on('click', function () {
+		$(this).toggleClass('active')
+	})
+
+	$('.nav-clear-spin').on('click', function () {
+		$(this).toggleClass('active')
+	})
+})

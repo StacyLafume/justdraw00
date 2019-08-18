@@ -8,7 +8,7 @@ let decrease = 0;
 
 let canvas = document.getElementById("canvas")
 
-// start gets the numeric input thta the user wanys to start the timer
+// start gets the numeric input that the user wants to start the timer
 let start = document.getElementById("begin")
 
 start.addEventListener("click", function(){
@@ -20,7 +20,7 @@ start.addEventListener("click", function(){
   // sets the canvas to be  clickable
   canvas.style.setProperty("pointer-events", "auto")
 
-// count hold the value of the number
+// count holds the value of the number
   let count = document.getElementById("count").value
 
   // default timer if user does not input any value to start the timer.
