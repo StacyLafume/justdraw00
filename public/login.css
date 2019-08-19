@@ -65,9 +65,10 @@ height: 500px;
 } */
 label {
     font-size: 2rem;
-    margin-right: 81%;
+    margin-right: 80%;
     color: white;
     font-weight: 400;
+    font-family: 'IBM Plex Sans';
 }
 label.email {
     margin-right: 90%;

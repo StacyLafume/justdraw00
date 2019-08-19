@@ -53,7 +53,8 @@
           <h3>
             User Name:<br> <span class="userName">@<%= user.userName %></span>
             <div class="dropdown">
-            <i  onclick="myFunction()" class="dropbtn fas fa-ellipsis-v"></i>
+            <i  onclick="myFunction()" class="dropbtn fas fa-bars"></i>
+            
               <div id="myDropdown" class="dropdown-content">
 
                 <a href="/logout" class="signInButton btn btn-default btn-sm">Logout</a>
@@ -102,11 +103,11 @@
             <!-- rendering the title -->
             <figcaption><%= drawings[i].title %></figcaption>
 
-            <i class="fas fa-trash-alt" data-drawings="<%= drawings[i].png %>"></i>
+            <i class="hover fas fa-trash-alt" data-drawings="<%= drawings[i].png %>"></i>
 
             <!-- <a href="/editdraw?pic_id=<%= drawings[i]._id %>"> -->
 
-            <i class="far fa-edit" data-drawings="<%= drawings[i].png %>" data-id="<%= drawings[i]._id %>" data-title="<%= drawings[i].title %>"></i>
+            <i class="hover far fa-edit" data-drawings="<%= drawings[i].png %>" data-id="<%= drawings[i]._id %>" data-title="<%= drawings[i].title %>"></i>
             <!-- <button ata-drawings="<%= drawings[i].png%>" type="button" name="button"></button> -->
 
             <!-- </a> -->

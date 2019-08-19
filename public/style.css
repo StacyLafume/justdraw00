@@ -7,7 +7,6 @@ body {
   background-repeat:no-repeat;
   font-family: 'IBM Plex Sans';
   font-weight: 200;
-  height: 600px;
   /* background-image: url("img/default.png");
   background-position: center;
   background-size: cover; */
@@ -416,3 +415,11 @@ figure>input {
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+.hover:hover{
+color: black;
+}
+.hover{
+  color: lightgrey;
+  font-size: 2rem;
+}
