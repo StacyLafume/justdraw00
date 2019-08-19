@@ -233,7 +233,6 @@ input {
   font-size: 3rem;
   text-decoration: none;
   text-align: center;
-  width: 30%;
   color: white;
   margin-left: 1%;
   padding: 5px 15px 5px 15px;
@@ -379,3 +378,41 @@ figure>input {
   height: 500px;
   width: 100%;
 } */
+.dropbtn {
+
+  color: white;
+
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #5694a7;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}

@@ -53,30 +53,45 @@ Array.from(edit).forEach(function(element) {
 
       })
     })
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+    window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
-    $(document).ready(function () {
-	$('.nav-back-arrow').on('click', function () {
-		$(this).toggleClass('active')
-	})
-
-	$('.nav-front-arrow').on('click', function () {
-		$(this).toggleClass('active')
-	})
-
-	$('.nav-clear-overlap').on('click', function () {
-		if ($(this).hasClass('active')) {
-			$(this).removeClass('active').addClass('none')
-		} else {
-			$(this).removeClass('none').addClass('active')
-		}
-	})
-
-	$('.nav-clear-trans').on('click', function () {
-		$(this).toggleClass('active')
-	})
-
-	$('.nav-clear-spin').on('click', function () {
-		$(this).toggleClass('active')
-	})
-})
+    // var commentSubmit = document.querySelectorAll('.commentSubmit')
+    //
+    // Array.from(commentSubmit).forEach(function(element) {
+    //   element.addEventListener('click', function() {
+    //     const currentUser = document.querySelector('.username').innerHTML
+    //     const comment = this.parentNode.parentNode.childNodes[1].value
+    //
+    //     const png = this.parentNode.parentNode.parentNode.childNodes[3].childNodes[3].innerHTML
+    //
+    //     console.log("this is url: ",png);
+    //
+    //     fetch('updateComment', {
+    //       method: 'put',
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       },
+    //       body: JSON.stringify({
+    //         'png': png,
+    //         'currentUser': currentUser,
+    //         'comment': comment
+    //       })
+    //     })
+    //
+    //   });
+    // });

@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Just Draw</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<head>
+  <meta charset="utf-8">
+  <title>Just Draw</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Monoton|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Monoton|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
-  </head>
-  <body>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 
-    <section>
+</head>
 
-      <% for(var i=0; i<drawings.length; i++) {%>
+<body>
 
-      <% if (drawings[i]) {%>
+  <section>
 
-      <figure class="grid-item">
-        <h2><%= drawings[i].title %></h2>
-        <img src="<%= drawings[i].png %>" alt="">
-        <figcaption>@<%= drawings[i].userName %></figcaption>
+    <span class="username"> <%= user.userName %></span>
 
-      </figure>
+    <% for(let i=0;i<drawings.length;i++) {%>
 
-      <% } %>
 
-      <% } %>
+    <figure class="grid-item">
+      <h2><%= drawings[i].title %></h2>
+      <img src="<%= drawings[i].png %>" alt="">
+      <figcaption>@<%= drawings[i].userName %></figcaption>
 
-    </section>
+    </figure>
 
-    <script src="main.js"></script>
-  </body>
+    <!-- <form class="postComment">
+      <input type="text" name="comment" placeholder="comment">
+      <button type="button" name="commentSubmit"><i class="fas fa-comment-medical commentSubmit"></i></button>
+      <p class="textSent"></p>
+    </form> -->
+
+
+    <% } %>
+
+
+  </section>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
