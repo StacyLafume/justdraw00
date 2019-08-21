@@ -7,7 +7,7 @@ body {
     background-repeat: no-repeat;
     font-family: 'IBM Plex Sans';
     font-weight: 200;
-
+    height: 100vh;
     OVERFLOW: hidden;
 }
 
@@ -191,4 +191,5 @@ form {
 hr {
     width: 50%;
     MARGIN-TOP: 4REM;
+    color:white;
 }

@@ -33,11 +33,11 @@ button:focus {
 
 .background {
     width: 100%;
-    height: 527px;
+    height: 100vh;
     /* border: 5px solid black; */
     background-image: url(JustDraw-logo/cover.png);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
 }
@@ -127,6 +127,18 @@ figure>input {
 
 
 .jumbotron.text-center {
-    margin-top: 35rem;
-    margin-left: 57%;
+text-align: right;
+margin-right: 2%;
+}
+.container {
+    /* top: 0; */
+    position: absolute;
+    background-image: linear-gradient(45deg, #117482, transparent);
+    padding: 2rem 0;
+    /* bottom: 0; */
+    /* position: sticky; */
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    /* align-items: flex-end; */
 }
