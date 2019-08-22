@@ -6,7 +6,7 @@
   <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="draw.css">
 
@@ -27,44 +27,62 @@
 
 <body>
   <main id="size">
-    <span>Time: <span id="display"></span></span>
+    <div class="dropdown">
 
-    <input id="count" type="text" placeholder="Enter Minutes" name="" value="">
+      <i onclick="myFunction()" class="dropbtn fas fa-bars"></i>
 
-    <button id="begin" type="button" name="button">Start Timer</button>
+      <div id="myDropdown" class="dropdown-content">
 
-    <!-- rendering the ttile inside the h1 title -->
-    <label for="title"> <h1>Title</h1> </label>
+        <i id="xIcon" class="far fa-window-close"></i>
 
-    <input id="editTitle" type="text" name="" value="">
+        <div class="menu-row .menu-display">
+          <div class="menu-display">Title</div>
+          <div class="menu-input">
+            <input id="editTitle" type="text" name="" placeholder="Enter Title" value="">
+          </div>
+        </div>
 
-    <label class="color" for="">Color:</label>
+        <div class='menu-row'>
+          <div class='menu-display '>Time: <span id="display"></span></div>
 
-    <input id="color" class="inputcolor" type="color" name="" value="">
+          <div class='menu-input'>
+            <input id="count" type="text" placeholder="Enter Minutes" name="" value="">
+          </div>
+        </div>
+        <div class='menu-row'>
+          <div class='menu-three-button'>
+            <div class='menu-single-button'><button id="begin" type="button" name="button">Start Timer</button></div>
+            <div class='menu-single-button'><button id="update" type="button" name="button">Save</button></div>
 
-    <label for="">Size:</label>
+            <div class='menu-single-button'>
 
-    <input id="myRange" type="range" name="" value="" min="1" max="100">
+                <button id="reset" type="button" name="button">Reset</button>
 
-    <button id="update" type="button" name="button">Save</button>
+            </div>
 
-    <button id="reset" type="button" name="button">Reset</button>
-    <!-- <button id="eraser" type="button" name="button">eraser</button> -->
+          </div>
+        </div>
 
-    <label  class="switch">
-      <input id="eraser"  type="checkbox">
-      <span class="slider round"></span>
-    </label>
+        <label class="color" for="">Color:</label>
 
+        <input id="color" class="inputcolor" type="color" name="" value="">
 
-    <!--
-    <div id="canvasDiv">
-    <canvas id="canvasInAPerfectWorld" width="490" height="220"></canvas>
-    </div> -->
+        <label for="" class="size">Size:</label>
 
+        <input id="myRange" type="range" name="" value="" min="1" max="100">
 
+        <span class="spanE">Eraser:</span>
+        <label class="switch">
+          <i id="eraser" class="fas fa-eraser"></i>
 
-    <canvas id="canvas" placeholder="Draw here...">YOUR BROWERS DOES NOT SUPPORT CANNVAS, PLEASE UPGRADE!</canvas>
+        </label>
+
+      </div>
+
+        <h1>Just Draw</h1>
+
+      <canvas id="canvas" width="800px" height="800px">YOUR BROWERS DOES NOT SUPPORT CANNVAS, PLEASE UPGRADE!</canvas>
+
 
 
 
