@@ -428,7 +428,7 @@ color: black;
 #backToTop {
     color: white;
     position: sticky;
-    left: 1107px;
+    left: 90%;
     top: 472px;
     border: 4px solid white;
     padding: 14px;
