@@ -1,3 +1,3 @@
 ![Just Draw](public/img/default.png)
 
-# Just Draw
+# [Just Draw](https://just-draw.herokuapp.com/)
