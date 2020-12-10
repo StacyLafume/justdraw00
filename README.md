@@ -1,3 +1,3 @@
-![Just Draw](public/img/cover.png)
+![Just Draw](public/img/default.png)
 
 # Just Draw
