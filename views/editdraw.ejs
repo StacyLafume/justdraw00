@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Just Draw</title>
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="draw.css">
+
+  <!-- <link rel="stylesheet" href="drawog.css"> -->
+
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Monoton|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- P5 js  library link-->
+  <script src="p5.js"></script>
+  <script src="p5.dom.js"></script>
+  <script src="p5.sound.js"></script>
+  <script src="sketch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+  <script src="https://kit.fontawesome.com/14935d9727.js"></script>
+</head>
+
+<body>
+  <main id="size">
+    <div class="dropdown">
+
+      <i onclick="myFunction()" class="dropbtn fas fa-bars"></i>
+
+      <div id="myDropdown" class="dropdown-content">
+
+        <i id="xIcon" class="far fa-window-close"></i>
+
+        <div class="menu-row .menu-display">
+          <div class="menu-display">Title</div>
+          <div class="menu-input">
+            <input id="editTitle" type="text" name="" placeholder="Enter Title" value="">
+          </div>
+        </div>
+
+        <div class='menu-row'>
+          <div class='menu-display '>Time: <span id="display"></span></div>
+
+          <div class='menu-input'>
+            <input id="count" type="text" placeholder="Enter Minutes" name="" value="">
+          </div>
+        </div>
+        <div class='menu-row'>
+          <div class='menu-three-button'>
+            <div class='menu-single-button'><button id="begin" type="button" name="button">Start Timer</button></div>
+            <div class='menu-single-button'><button id="update" type="button" name="button">Save</button></div>
+
+            <div class='menu-single-button'>
+
+                <button id="reset" type="button" name="button">Reset</button>
+
+            </div>
+
+          </div>
+        </div>
+
+        <label class="color" for="">Color:</label>
+
+        <input id="color" class="inputcolor" type="color" name="" value="">
+
+        <label for="" class="size">Size:</label>
+
+        <input id="myRange" type="range" name="" value="" min="1" max="100">
+
+        <span class="spanE">Eraser:</span>
+        <label class="switch">
+          <i id="eraser" class="fas fa-eraser"></i>
+
+        </label>
+
+      </div>
+
+        <h1>Just Draw</h1>
+
+      <canvas id="canvas" width="800px" height="800px">YOUR BROWERS DOES NOT SUPPORT CANNVAS, PLEASE UPGRADE!</canvas>
+
+
+
+
+
+  </main>
+
+  <script src="main.js"></script>
+
+  <script src="draw.js"></script>
+
+  <script src="timer.js"></script>
+
+  <script src="edit.js"></script>
+
+</body>
+
+</html>

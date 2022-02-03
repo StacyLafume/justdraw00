@@ -1,0 +1,431 @@
+body {
+  padding: 0%;
+  overflow-y: hidden;
+  background-color: #79c99e;
+  padding-top: 0%;
+  font-family: monospace;
+}
+
+main {
+  box-shadow: -3px 8px 14px #428f6666;
+  height: 650px;
+  overflow-y: hidden;
+}
+
+canvas#canvas {
+  pointer-events: none;
+  box-shadow: -3px 8px 14px #428f6666;
+  background-color: white;
+}
+
+html {
+  font-size: 10px
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+.size{
+  margin-left: 10%;
+  grid-column: 1/2;
+  grid-row: 7/8;
+}
+.spanE {
+    grid-column: 1/2;
+    grid-row: 8/9;
+    color: white;
+    font-size: 2rem;
+}
+.switch {
+  margin-left: 10%;
+  grid-column: 2/3;
+  grid-row: 8/9;
+}
+
+
+.inputcolor {
+  padding: 0%;
+  width: 2%;
+  height: 3rem;
+  border: 2px solid white;
+  background: #596b6b00;
+}
+
+span {
+  font-size: 1.5rem
+}
+
+h1 {
+    color: #4A4238;
+    font-size: 4rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: white;
+    text-align: center;
+    display: inline;
+    font-weight: 400;
+    margin-left: 40%;
+}
+
+
+
+h1>span {
+  color: #4D5359;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 70%;
+}
+
+.wrapper>section {
+  border: 2px solid white;
+  padding: 2.5rem;
+}
+
+.signUp {
+  display: grid;
+  width: 100%;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid #97DB4F;
+  padding: 2.5rem;
+  border-radius: 6px;
+  margin-left: 18%
+}
+
+label {
+  color: white;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+}
+
+.menu-display {
+  flex: 1;
+}
+
+.menu-input {
+  flex: 4;
+}
+
+input {
+    padding: 1%;
+    width: 96%;
+    box-shadow: -3px 8px 14px #428f6666;
+    border: 1px solid #a9d7bee3;
+    color: rgb(1, 0, 0);
+    margin: 1%;
+    border-radius: 6px;
+    font-size: 2rem;
+}
+label{
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+#color{
+  grid-column: 2/3;
+  grid-row: 6/7;
+  width: 30%;
+}
+
+#count{
+  grid-column: 1/3;
+  grid-row: 4/5;
+}
+#begin{
+  grid-column: 1/3;
+  grid-row: 5/6;
+}
+#display{
+  grid-column: 1/3;
+  grid-row: 3/4;
+}
+#title{
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+.dropdown a:hover {
+
+  background-color: #ddd;
+}
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+}
+.signUpButton {
+  grid-column: 1/3;
+  border-radius: 50px;
+  border-radius: 6px;
+  font-weight: lighter;
+  border: 2px solid white;
+  font-size: 4rem;
+  text-decoration: none;
+  text-align: center;
+  width: 40%;
+  color: black;
+  margin-left: 26%;
+  margin-top: 30px;
+  background-color: #f5f5dc08;
+}
+
+.signUp>section {
+  grid-auto-rows: minmax(100px, auto);
+  height: 20px;
+}
+
+.email {
+  grid-column: 1/3;
+  margin-bottom: 35px;
+  margin-top: 17px;
+}
+
+
+.cat {
+  position: fixed;
+  -ms-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  height: 15rem;
+  position: absolute;
+  /* bottom: 16rem; */
+  top: 3rem;
+  right: 95rem;
+}
+
+.signIn {
+  border-radius: 6px;
+  margin-left: 41%;
+}
+
+.signInButton {
+  grid-column: 1/3;
+  border-radius: 50px;
+  border-radius: 6px;
+  font-weight: normal;
+  border: 2px solid white;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: center;
+  width: 30%;
+  color: black;
+  margin-left: 1%;
+  padding: 1%;
+  background-color: #f5f5dc08;
+  margin: 1%;
+}
+
+h3 {
+  margin: 0;
+  font-size: 4rem;
+}
+
+.move1 {
+  position: fixed;
+  transition: .5s ease;
+  top: 36%;
+  left: 30%;
+}
+
+.move2 {
+  position: fixed;
+  transition: .5s ease;
+  top: 50%;
+  left: 30%;
+}
+
+.pencileTwo {
+  position: relative;
+  -ms-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  transform: rotate(30deg);
+  height: 28rem;
+  position: fixed;
+  /* bottom: 16rem; */
+  top: 11rem;
+  right: 7rem;
+}
+
+a {
+  color: white;
+}
+
+.pas {
+  margin-bottom: 13%;
+}
+
+.emailTwo {
+  margin-bottom: 13%;
+}
+
+.caterpillar {
+  transform: scaleX(-1) rotate(-16deg);
+  height: 50rem;
+  position: fixed;
+  transition: .5s ease;
+  top: 50%;
+  left: 50%;
+}
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid-item {
+  background-color: white;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  width: 75%;
+  border-radius: 24px;
+}
+
+img {
+  width: 100%;
+}
+
+.smaller {
+  font-size: 50px;
+  height: 100px;
+  margin-top: 200px;
+  border-bottom: 2px solid white;
+  width: 30%;
+  text-align: center;
+  display: inline;
+}
+
+.showme {
+  display: none;
+}
+
+.showhim:hover.showme {
+  display: block;
+}
+
+figure>input {
+  width: 60%;
+  margin: 8%;
+  box-shadow: none;
+}
+
+.a-trash-alt {
+  color: #4A4238;
+}
+
+.fa-window-close:before {
+    content: "\f410";
+    font-size: 3rem;
+    position: absolute;
+    right: 16px;
+    color: white;
+}
+
+
+.menu-display {
+    flex: 1;
+    font-size: 2rem;
+    color: white;
+}
+
+.menu-three-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.menu-single-button {
+  flex: 1;
+}
+
+
+#myRange {
+    width: 22%;
+    /* right: 1111198px; */
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.dropdown-content {
+    /* display: none; */
+    position: absolute;
+    background-color: #5694a7;
+    min-width: 160px;
+    border-radius: 6px;
+    padding: 3%;
+    font-family: 'IBM Plex Sans';
+    /* overflow: auto; */
+    font-weight: 400;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.far {
+    font-weight: 400;
+}
+
+.fa-window-close:before {
+    content: "\f410";
+    font-size: 3rem;
+    position: absolute;
+    right: 28px;
+    top: 9px;
+    color: white;
+}
+
+.menu-input {
+    flex: 4;
+}
+
+input {
+    padding: 1%;
+    width: 83%;
+    box-shadow: -3px 8px 14px #428f6666;
+    border: 1px solid #a9d7bee3;
+    color: rgb(1, 0, 0);
+    margin: 1%;
+    border-radius: 6px;
+    font-size: 1.5rem;
+}
+button {
+    color: white;
+    background-color: #e22b2b00;
+    font-size: 1.5rem;
+    padding: 4%;
+    margin: 11%;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+button#begin {
+    margin-left: 1%;
+}
+
+.inputcolor {
+    padding: 0%;
+    width: 2%;
+    height: 3rem;
+    border: 2px solid white;
+    background: #596b6b00;
+}
+
+a {
+
+
+    font-size: 1rem;
+}

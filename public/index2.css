@@ -1,0 +1,144 @@
+
+body {
+    /* background-color: #79c99e; */
+    /* background-image: linear-gradient(to bottom right, steelblue, cadetblue, lightgreen); */
+    font-family: 'IBM Plex Sans';
+    font-weight: 200;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+html {
+  font-size: 10px
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.signUp {
+  display: grid;
+  width: 100%;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid #97DB4F;
+  padding: 2.5rem;
+  border-radius: 6px;
+  margin-left: 18%
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    /* border: 5px solid black; */
+    background-image: url(JustDraw-logo/cover.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.signUp>section {
+  /* border:2px solid black; */
+  grid-auto-rows: minmax(100px, auto);
+  height: 20px;
+}
+
+
+.signInButton {
+    /* transition: .5s ease; */
+    /* grid-column: 1/3; */
+    /* border-radius: 50px; */
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    border: 2px solid white;
+    font-size: 2rem;
+    text-decoration: none;
+    text-align: center;
+    /* width: 30%; */
+    color: white;
+    position: static;
+    margin-left: 4%;
+    /* margin-top: 76px; */
+    padding: 5px 15px 5px 15px;
+    background-color: #f5f5dc08;
+    /* margin-top: 20%; */
+}
+
+
+
+.linkHolder {
+  margin: 2% 2% 2% 0%;
+}
+
+
+.move1 {
+    /* position: static; */
+    transition: .5s ease;
+    /* bottom: 165px; */
+}
+
+.move2 {
+
+
+  position: static;
+    transition: .5s ease;
+    top: 50px;
+
+}
+
+a {
+  color: white;
+}
+
+.fa-edit {
+  font-weight: 300;
+  color: black;
+}
+
+.pas {
+  margin-bottom: 13%;
+}
+
+img {
+  width: 100%;
+}
+
+.smaller {
+  font-size: 50px;
+  height: 100px;
+  margin-top: 200px;
+  border-bottom: 2px solid white;
+  width: 30%;
+  text-align: center;
+  display: inline;
+}
+
+figure>input {
+  width: 60%;
+  margin: 8%;
+  box-shadow: none;
+}
+
+
+.jumbotron.text-center {
+text-align: right;
+margin-right: 2%;
+}
+.container {
+    /* top: 0; */
+    position: absolute;
+    background-image: linear-gradient(45deg, #117482, transparent);
+    padding: 2rem 0;
+    /* bottom: 0; */
+    /* position: sticky; */
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    /* align-items: flex-end; */
+}
