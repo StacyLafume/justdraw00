@@ -3,9 +3,9 @@
 // set up ======================================================================
 // get all the tools we need
 
-
+if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
-
+}
 
 var express  = require('express');
 var app      = express();
@@ -24,7 +24,10 @@ var configDB = require('./config/database.js');
 var db
 
 // configuration ===============================================================
-mongoose.connect(configDB.url, (err, database) => {
+mongoose.connect(configDB.url, {
+  useNewUrlParser:    true,
+  useUnifiedTopology: true,
+},(err, database) => {
   if (err) return console.log(err)
   db = database
   require('./app/routes.js')(app, passport, db, ObjectId );
