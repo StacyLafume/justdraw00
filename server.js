@@ -24,10 +24,7 @@ var configDB = require('./config/database.js');
 var db
 
 // configuration ===============================================================
-mongoose.connect(configDB.url, {
-  useNewUrlParser:    true,
-  useUnifiedTopology: true,
-},(err, database) => {
+mongoose.connect(configDB.url, (err, database) => {
   if (err) return console.log(err)
   db = database
   require('./app/routes.js')(app, passport, db, ObjectId );
