@@ -24,11 +24,11 @@ var configDB = require('./config/database.js');
 var db
 
 // configuration ===============================================================
-mongoose.connect(configDB.url, (err, database) => {
-  if (err) return console.log(err)
-  db = database
-  require('./app/routes.js')(app, passport, db, ObjectId );
-}); // connect to our database
+// mongoose.connect(configDB.url, (err, database) => {
+//   if (err) return console.log(err)
+//   db = database
+//   require('./app/routes.js')(app, passport, db, ObjectId );
+// }); // connect to our database
 
 //app.listen(port, () => {
     // MongoClient.connect(configDB.url, { useNewUrlParser: true }, (error, client) => {
@@ -68,5 +68,26 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 //require('./app/routes.js')(app, passport, db); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
-app.listen(port);
-console.log('The magic happens on port ' + port);
+mongoose.connect(configDB.url, {
+  user: process.env.USER_NAME,
+  pass: process.env.USER_PASSWORD,
+  authSource: 'admin',
+  dbName: configDB.dbName,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 15000
+})
+.then(() => {
+  db = mongoose.connection.db;
+
+  require('./app/routes.js')(app, passport, db, ObjectId);
+
+  app.listen(port, () => {
+    console.log(`Database connected. Listening on port ${port}`);
+  });
+})
+.catch((err) => {
+  // Print only the error type, not credentials or connection details.
+  console.error('Database startup failed:', err.name);
+  process.exit(1);
+});
